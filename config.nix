@@ -11,10 +11,10 @@
         ripgrep
         fzf
         lazygit
-        kubectl
-        kubectx
-        k9s
-        fluxcd
+        zoxide
+        pyenv
+        oh-my-posh
+        eza
       ];
     };
   };
