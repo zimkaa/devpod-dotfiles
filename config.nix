@@ -1,6 +1,7 @@
 {
   packageOverrides = pkgs: with pkgs; {
     myPackages = pkgs.buildEnv {
+      name = "anton-tools";
       paths = [
         zsh-completions
         neovim
