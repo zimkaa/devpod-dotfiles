@@ -15,6 +15,8 @@ ln -sf "$PWD/config.nix" "$XDG_CONFIG_HOME"/nixpkgs/config.nix
 
 curl -o "$HOME/.zshrc" https://raw.githubusercontent.com/zimkaa/.dotfiles/main/.zshrc
 
+mkdir -p "$XDG_CONFIG_HOME/ohmyposh/like_p10k.toml"
+
 curl -o "$XDG_CONFIG_HOME/ohmyposh/like_p10k.toml" https://raw.githubusercontent.com/zimkaa/.dotfiles/main/.config/ohmyposh/like_p10k.toml
 
 # Install Nix packages from config.nix
