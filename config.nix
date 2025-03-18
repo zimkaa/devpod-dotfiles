@@ -5,9 +5,6 @@
       paths = [
         zsh-completions
         neovim
-        go
-        nodejs_22
-        pure-prompt
         fd
         ripgrep
         fzf
@@ -16,6 +13,7 @@
         pyenv
         oh-my-posh
         eza
+        tmux
       ];
     };
   };
