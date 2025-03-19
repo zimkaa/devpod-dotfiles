@@ -14,6 +14,7 @@
         oh-my-posh
         eza
         tmux
+        go-task
       ];
     };
   };
