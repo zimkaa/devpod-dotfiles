@@ -3,18 +3,19 @@
     myPackages = pkgs.buildEnv {
       name = "anton-tools";
       paths = [
-        zsh-completions
-        neovim
-        fd
-        ripgrep
-        fzf
-        lazygit
-        zoxide
-        pyenv
-        oh-my-posh
         eza
-        tmux
+        fd
+        fzf
         go-task
+        lazygit
+        neovim
+        oh-my-posh
+        pyenv
+        ripgrep
+        tmux
+        uv
+        zoxide
+        zsh-completions
       ];
     };
   };
