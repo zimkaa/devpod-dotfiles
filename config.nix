@@ -10,12 +10,16 @@
         lazygit
         neovim
         oh-my-posh
-        pyenv
         ripgrep
         tmux
         uv
         zoxide
         zsh-completions
+        direnv
+        dive
+        # dotenvx # temporary bag
+        bat
+        yazi
       ];
     };
   };
