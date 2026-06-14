@@ -2,19 +2,70 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
--- old keymaps
--- vim.api.nvim_set_keymap("i", "jj", "<ESC>", { noremap = false })
+-- vim.keymap.set("n", "<leader>zg", function()
+--   local word = vim.fn.expand("<cword>")
+--   vim.cmd("normal! zg")
+--   vim.notify("Добавлено в ЛОКАЛЬНЫЙ словарь проекта" .. word, vim.log.levels.INFO)
+-- end, { desc = "Spell: Add to LOCAL project dict" })
+--
+-- -- Глобально: временно переключаем spellfile только на глобальные, добавляем слово, возвращаем назад
+-- vim.keymap.set("n", "<leader>zG", function()
+--   local word = vim.fn.expand("<cword>")
+--   local globals = {
+--     vim.fn.stdpath("config") .. "/spell/en.utf-8.add",
+--     vim.fn.stdpath("config") .. "/spell/ru.utf-8.add",
+--   }
+--   local before = vim.opt_local.spellfile:get()
+--   vim.opt_local.spellfile = globals
+--   vim.cmd("silent spellgood " .. word)
+--   vim.opt_local.spellfile = before
+--   vim.notify("Добавлено в ГЛОБАЛЬНЫЙ словарь: " .. word, vim.log.levels.INFO)
+-- end, { desc = "Spell: Add to GLOBAL dict" })
+--
+-- -- Локально удалить (из проекта)
+-- vim.keymap.set("n", "<leader>zd", function()
+--   local word = vim.fn.expand("<cword>")
+--   vim.cmd("normal! zw")
+--   vim.notify("Удалено из ЛОКАЛЬНОГО словаря проекта" .. word, vim.log.levels.WARN)
+-- end, { desc = "Spell: Remove from LOCAL project dict" })
+--
+-- -- Глобально удалить
+-- vim.keymap.set("n", "<leader>zD", function()
+--   local word = vim.fn.expand("<cword>")
+--   local globals = {
+--     vim.fn.stdpath("config") .. "/spell/en.utf-8.add",
+--     vim.fn.stdpath("config") .. "/spell/ru.utf-8.add",
+--   }
+--   local before = vim.opt_local.spellfile:get()
+--   vim.opt_local.spellfile = globals
+--   vim.cmd("silent spellwrong " .. word)
+--   vim.opt_local.spellfile = before
+--   vim.notify("Удалено из ГЛОБАЛЬНОГО словаря: " .. word, vim.log.levels.WARN)
+-- end, { desc = "Spell: Remove from GLOBAL dict" })
+
+-- if vim.g.vscode then
+--   vim.keymap.set("n", "<leader>re", function()
+--     vim.VSCodeNotify("editor.action.rename")
+--   end, { noremap = true, silent = true })
+-- end
+
+-- vim.keymap.set({ "n", "v" }, "р", "h")
+-- vim.keymap.set({ "n", "v" }, "о", "j")
+-- vim.keymap.set({ "n", "v" }, "л", "k")
+-- vim.keymap.set({ "n", "v" }, "д", "l")
+
+-- vim.cmd("nmap <leader>h :e ~/.config/nvim/lua/config/keymaps.lua<cr>")
+-- -- Save file
+-- vim.cmd("nmap <leader>h :w<cr>")
+--
+-- -- collaps mode
+-- vim.cmd("nmap j gj")
+-- vim.cmd("nmap k gk")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "move lines down in visual selection" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "move lines up in visual selection" })
 
--- -- Not work for my config.
--- -- Centred find word
--- vim.keymap.set("n", "n", "nzzzv")
--- vim.keymap.set("n", "N", "Nzzzv")
-
--- vim.keymap.set("n", "<leader>xc", "<cmd>!chmod +x %<CR>", {desc = "execute command"})
-
+-- NOTE: For vacode
 if vim.g.vscode then
   -- vim.keymap.set("n", "n", "nzzzv")
   -- vim.keymap.set("n", "N", "Nzzzv")
@@ -45,13 +96,13 @@ if vim.g.vscode then
     { "n", "<leader>sr", "editor.action.referenceSearch.trigger" },
     -- NOTE: search in file
     { "n", "<leader>ff", "action.find" },
-    -- NOTE: find and replase in file
+    -- NOTE: find and replace in file
     { "n", "<leader>fr", "editor.action.startFindReplaceAction" },
     -- NOTE: search global
     { "n", "<leader>fg", "workbench.action.findInFiles" },
-    -- NOTE: find and replase global
-    { "n", "<leader>rg", "workbench.action.replaseInFiles" },
-    -- NOTE: replase global
+    -- NOTE: find and replace global
+    { "n", "<leader>rg", "workbench.action.replaceInFiles" },
+    -- NOTE: replace global
     { "n", "<leader>re", "editor.action.rename" },
     -- NOTE: refactor
     { "n", "<leader>rf", "editor.action.refactor" },

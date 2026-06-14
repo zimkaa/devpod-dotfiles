@@ -21,11 +21,12 @@ for dir in */; do
       if [ -f "$script" ]; then
         # Проверяем, что это не тот же самый скрипт
         if [ "$(readlink -f "$script")" != "$CURRENT_SCRIPT" ]; then
-          echo "Запуск $script..."
+          echo "Запуск $dir/$script..."
           chmod +x "$script" # На всякий случай даем права на исполнение
           ./"$script"
         fi
       fi
+      echo "Выполнено $dir/$script..."
     done
 
     # Возвращаемся обратно на уровень выше
