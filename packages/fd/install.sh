@@ -1,3 +1,3 @@
 #!/bin/bash
 
-# apt-get install -y fd-find
+sudo apt-get install -y fd-find
