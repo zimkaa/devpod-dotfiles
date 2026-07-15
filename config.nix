@@ -3,6 +3,10 @@
     myPackages = pkgs.buildEnv {
       name = "anton-tools";
       paths = [
+        bat
+        direnv
+        dive
+        dotenvx # temporary bag
         eza
         fd
         fzf
@@ -13,13 +17,10 @@
         ripgrep
         tmux
         uv
+        worktrunk
+        yazi
         zoxide
         zsh-completions
-        direnv
-        dive
-        # dotenvx # temporary bag
-        bat
-        yazi
       ];
     };
   };
